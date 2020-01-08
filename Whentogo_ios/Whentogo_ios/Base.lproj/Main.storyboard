@@ -32,6 +32,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="검색하기"/>
                                 <connections>
+                                    <action selector="searchtimebtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qBo-Ue-bcV"/>
                                     <segue destination="1gP-tP-dYs" kind="show" id="LsC-hE-Uo0"/>
                                 </connections>
                             </button>
@@ -40,6 +41,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="eAC-HN-FIy"/>
+                    <connections>
+                        <outlet property="arrivaltime" destination="RiC-o6-dHn" id="gmc-DI-OZU"/>
+                        <outlet property="destination" destination="Gq8-PV-rQJ" id="CuW-rV-paJ"/>
+                        <outlet property="searchtime" destination="8mT-Hk-5qS" id="ilQ-xA-oay"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -53,14 +59,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="출발시간" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sAR-5h-tXb">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="출발시간" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sAR-5h-tXb" userLabel="departtext">
                                 <rect key="frame" x="84" y="149" width="246" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zpd-ny-fyv">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zpd-ny-fyv" userLabel="departtime">
                                 <rect key="frame" x="84" y="210" width="246" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -79,7 +85,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="출발"/>
                                 <connections>
-                                    <segue destination="X5G-hj-9UN" kind="show" id="IX4-39-0OU"/>
+                                    <action selector="startbtn:" destination="1gP-tP-dYs" eventType="touchUpInside" id="6GX-0c-WEm"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kI4-Dd-Zc3">
@@ -99,6 +105,13 @@
                         <viewLayoutGuide key="safeArea" id="1Kn-FT-ApG"/>
                     </view>
                     <navigationItem key="navigationItem" id="wfd-b0-2o4" colorLabel="IBBuiltInLabel-Red"/>
+                    <connections>
+                        <outlet property="departtext" destination="sAR-5h-tXb" id="555-LQ-Fyf"/>
+                        <outlet property="departtime" destination="sAR-5h-tXb" id="kws-2r-4Zr"/>
+                        <outlet property="jsontext" destination="kI4-Dd-Zc3" id="IIy-Kj-yf8"/>
+                        <outlet property="timeleft" destination="zpd-ny-fyv" id="VkW-ha-sWs"/>
+                        <outlet property="timeleftshow" destination="RQI-eC-Txd" id="HPd-u6-57L"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fbo-5F-wug" sceneMemberID="firstResponder"/>
             </objects>
@@ -123,6 +136,9 @@
                                 <rect key="frame" x="160" y="606" width="95" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="도착확인하기"/>
+                                <connections>
+                                    <action selector="telldeparture:" destination="ZMJ-m0-p87" eventType="touchUpInside" id="gWL-A9-rpM"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -131,6 +147,7 @@
                     <navigationItem key="navigationItem" id="XUu-Ba-kRZ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l7O-am-xVg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="ZMJ-m0-p87" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3375.36231884058" y="118.52678571428571"/>
         </scene>
